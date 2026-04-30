@@ -1,7 +1,7 @@
 <!-- Unit 12 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Standard Animation
+[ yes ] Two Interactive Drop-down Inputs 
+[ yes ] Standard Animation
 [  ] Custom Animation
 [  ] Include Three Images
 
@@ -21,40 +21,43 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About Aaliyah </h1>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        🎥 What is my favorite show?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">Suits</option>
+          <option value="movie2">A Good Place</option>
+          <option value="movie3">The Summer I turned Pretty</option>
+          <option value="movie4">The Vampire Diaries</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
     </form>
     <div id="movie-result">
       <p id="movie-text"></p>
+      <img class="goodplace">
+      <img class="jaylabaddie">
     </div>
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        🍽 What is my favorite dish?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Sushi</option>
+          <option value="book2">Probably a Mug</option>
+          <option value="book3">Bolognese</option>
+          <option value="book4">Probably a Bowl</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
     </form>
     <div id="book-result">
       <p id="book-text"></p>
+      <img class="demi">
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
@@ -66,11 +69,13 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
+        if (answer === "movie2") {
           $("#movie-text").text("YESSSS!");
+          $(".goodplace").attr("src", "good place.jpg")
         } 
         else {
-          $("#movie-text").text("Try Again!");
+          $("#movie-text").text("WRONGOOOO! You thought");
+          $(".jaylabaddie").attr("src", "no.JPG")
         }
       });
 
@@ -81,11 +86,12 @@ Select ONE Additional Feature to Add
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
+        if (answer === "book2") {
+          $("#book-text").text("-Demi Lavato");
+          $(".demi").attr("src", "Demi.png")
         } 
         else {
-          $("#book-text").text("Try Again!");
+          $("#book-text").text("NOOOOo!");
         }
       });
       
