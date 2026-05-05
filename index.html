@@ -2,11 +2,11 @@
 Requirements
 [ yes ] Two Interactive Drop-down Inputs 
 [ yes ] Standard Animation
-[  ] Custom Animation
-[  ] Include Three Images
+[ yes ] Custom Animation
+[ yes ] Include Three Images
 
 Select ONE Additional Feature to Add  
-[ no ] Feature 1 - Google Font
+[ yes ] Feature 1 - Google Font
 [ no ] Feature 2 - Chain jQuery Methods
 [ no ] Feature 3 - .mouseover() & .mouseOut() Methods
 [ no ] Feature 4 - :hover Feature 
@@ -19,7 +19,12 @@ Select ONE Additional Feature to Add
     <meta charset="utf-8" />
     <title>Unit 12 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
+ 
+</head>
   <body>
     <h1>Quiz About Aaliyah </h1>
     <hr />
@@ -34,12 +39,15 @@ Select ONE Additional Feature to Add
           <option value="movie4">The Vampire Diaries</option>
         </select>
       </label>
+
       <button type="submit">Check Movie Answer</button>
+      <button class="button1">for surprise</button>
+
     </form>
     <div id="movie-result">
       <p id="movie-text"></p>
-      <img class="goodplace">
-      <img class="jaylabaddie">
+      <img class="goodplace" width="200">
+      <img class="jaylabaddie" width="200">
     </div>
     <hr />
     <!-- Book Question -->
@@ -57,8 +65,12 @@ Select ONE Additional Feature to Add
     </form>
     <div id="book-result">
       <p id="book-text"></p>
-      <img class="demi">
+      <img class="demi" width="200">
+      <img class="jacobs" width="200">
     </div>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
@@ -71,12 +83,24 @@ Select ONE Additional Feature to Add
 
         if (answer === "movie2") {
           $("#movie-text").text("YESSSS!");
-          $(".goodplace").attr("src", "good place.jpg")
+          $(".goodplace").hide().attr("src", "good place.jpg")
+          $(".goodplace").fadeIn(2000);
         } 
         else {
           $("#movie-text").text("WRONGOOOO! You thought");
           $(".jaylabaddie").attr("src", "no.JPG")
         }
+      });
+         
+      //button1
+        $(".button1").click(function () {
+         $(".jaylabaddie").animate({
+            width:"300px",
+            marginLeft:"100px",
+            borderWidth: "300px"
+          },1500);
+
+
       });
 
       //=======================Book Question jQuery Code
@@ -88,10 +112,13 @@ Select ONE Additional Feature to Add
 
         if (answer === "book2") {
           $("#book-text").text("-Demi Lavato");
-          $(".demi").attr("src", "Demi.png")
+          $(".demi").hide().attr("src", "Demi.png")
+          $(".demi").fadeIn(2000);
         } 
         else {
-          $("#book-text").text("NOOOOo!");
+          $("#book-text").text("tRy AgAiN");
+          $(".jacobs").attr("src", "IMG_6301.jpeg")
+
         }
       });
       

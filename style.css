@@ -1,5 +1,5 @@
 #movie-result {
-  background: rgb(244, 98, 181);
+  background: rgb(195, 155, 232);
   border: 5px solid black;
   font-size: 24px;
   min-height: 160px;
@@ -8,7 +8,7 @@
 }
 
 #book-result {
-  background: rgb(196, 159, 255);
+  background: rgb(232, 224, 155);
   border: 5px solid black;
   font-size: 24px;
   min-height: 160px;
@@ -19,4 +19,10 @@
 hr {
   height: 5px;
   background-color: black;
+}
+
+html {
+  font-family: "Kranky", serif;
+  font-weight: 400;
+  font-style: normal;
 }
